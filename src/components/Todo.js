@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Button from 'react-bootstrap/Button';
 
 
 function usePrevious(value) {
@@ -49,18 +50,18 @@ export default function Todo(props) {
       </div>
       <div className="btn-group">
 
-        <button
-          type="button"
+        <Button
+          type="Button"
           className="btn todo-cancel"
           onClick={() => setEditing(false)}
         >
           Cancel
           <span className="visually-hidden">renaming {props.name}</span>
-        </button>
-        <button type="submit" className="btn btn__primary todo-edit">
+        </Button>
+        <Button type="submit" className="btn btn__primary todo-edit">
           Save
           <span className="visually-hidden">new name for {props.name}</span>
-        </button>
+        </Button>
       </div>
     </form>
   );
@@ -79,21 +80,21 @@ export default function Todo(props) {
           </label>
         </div>
         <div className="btn-group">
-        <button
-          type="button"
+        <Button
+          type="Button"
           className="btn"
           onClick={() => setEditing(true)}
           ref={editButtonRef}
           >
             Edit <span className="visually-hidden">{props.name}</span>
-          </button>
-          <button
-            type="button"
+          </Button>
+          <Button
+            type="Button"
             className="btn btn__danger"
             onClick={() => props.deleteTask(props.id)}
           >
             Delete <span className="visually-hidden">{props.name}</span>
-          </button>
+          </Button>
         </div>
     </div>
   );
